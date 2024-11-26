@@ -29,8 +29,8 @@ echo "Working on branch: $current_branch"
 echo "Checking for newer files online first..."
 git pull || handle_error "Failed to pull from remote"
 
-# Stage modified and deleted files only
-git add -u || handle_error "Failed to stage changes"
+# Stage all changes, including untracked files
+git add -A || handle_error "Failed to stage all changes"
 
 # Display staged changes and check for deletions
 echo "Staged changes:"
